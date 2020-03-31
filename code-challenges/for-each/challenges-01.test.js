@@ -11,7 +11,6 @@ Then, write a function named speaker that takes in a string and a callback funct
 const greeting = (word) => {
   return word.toUpperCase();
 };
-
 const speaker = (message, callback) => callback(message);
 
 
@@ -39,7 +38,7 @@ const addNumbers = (num, arr, times, callback) => {
   for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
-   return arr;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,8 +54,8 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  if(num % 3 === 2){
-  arr.pop();
+  if (num % 3 === 2) {
+    arr.pop();
   }
 };
 
@@ -74,8 +73,9 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  arr.forEach((num) => {callback(num, arr);
-    });
+  arr.forEach((num) => {
+    callback(num, arr);
+  });
   return arr;
 };
 
@@ -90,8 +90,7 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  
-  arr.forEach(function(num, i, arr) {
+  arr.forEach(function (num, i, arr) {
     if (num % 3 === 2) {
       arr.pop();
     }
@@ -119,7 +118,7 @@ This function should use forEach to populate your grocery list based on the stor
 const createList = (availableItems) => {
   let list = [];
   availableItems.forEach((item) => {
-    if(item.available === true) {
+    if (item.available === true) {
       list.push(item.name);
     }
   });
@@ -146,10 +145,10 @@ const fizzbuzz = (arr) => {
     if (item % 3 === 0 && item % 5 === 0) {
       output.push('Fizz Buzz');
     }
-    else if(item % 3 === 0){
+    else if (item % 3 === 0) {
       output.push('Fizz');
     }
-    else if(item % 5 === 0){
+    else if (item % 5 === 0) {
       output.push('Buzz');
     }
     else {
