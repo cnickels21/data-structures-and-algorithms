@@ -182,9 +182,27 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
-const sortMeetingsByDay = (arr) => {
-  // Solution code here...
-};
+// const sortMeetingsByDay = (arr) => {
+//   arr.sort(function(a) {
+//     const dayOne = a.dayOfWeek;
+//     const dayTwo = b.dayOfWeek;
+
+//     if (dayOne.charAt(1) === 'o') {
+//       return -1;
+//     }
+//     if (dayOne.charAt(1) === 'u') {
+//       return -1;
+//     }
+//     if (dayOne.charAt(1) === 'd') {
+//       return 0;
+//     } 
+//     if (dayOne.charAt(1) === 'r') {
+//       return 1;
+//     } 
+//     return 0
+//   })
+//   return arr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
