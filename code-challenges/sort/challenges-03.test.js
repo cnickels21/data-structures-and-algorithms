@@ -77,7 +77,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  arr.sort((a, b) => a.localeCompare(b));
+  arr.sort((a, b) => {return a.toString().length - b.toString().length});
   return arr;
 };
 
@@ -99,8 +99,22 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
+function compare(a, b) {
+  const personA = a.lastName;
+  const personB = b.lastName;
+
+  if (personA > personB) {
+    return 1;
+  }
+  if (personA < personB) {
+    return -1;
+  }
+  return 0;
+};
+
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort(compare); 
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +128,36 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    const lastA = a.lastName;
+    const lastB = b.lastName;
+    const firstA = a.firstName;
+    const firstB = b.firstName;
+    const ageA = a.age;
+    const ageB = b.age;
+
+    if (lastA > lastB) {
+      return 1;
+    } else if (lastA < lastB) {
+      return -1;
+    } 
+    if (lastA === lastB) {
+      if (firstA > firstB) {
+        return 1;
+      } else if (firstA < firstB) {
+        return -1;
+      }
+      if (firstA === firstB) {
+        if (ageA > ageB) {
+          return 1;
+        } else if (ageA < ageB) {
+          return -1;
+        }
+      }
+    }
+    return 0;
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
