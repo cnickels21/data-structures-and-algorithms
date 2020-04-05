@@ -78,10 +78,10 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   let ingredients = recipe.ingredients;
-  ingredients.forEach( item => {
-  let firstSlice = item.indexOf(" ");
-  let secondSlice = item.indexOf(" ", firstSlice + 1);
-  result.push(item.slice(secondSlice + 1));
+  ingredients.forEach(item => {
+    let firstSlice = item.indexOf(" ");
+    let secondSlice = item.indexOf(" ", firstSlice + 1);
+    result.push(item.slice(secondSlice + 1));
   });
   return result;
 };
@@ -96,16 +96,16 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  for(let i =0; i < recipe.ingredients.length; i++) {
-      let ingredient = recipe.ingredients[i];
-      let newArr = ingredient.split(' ');
-      if (newArr.length === 3) {
-          result.push(newArr[2]);
-      } else if (newArr.length === 4 ) {
-          result.push(`${newArr[2]} ${newArr[3]}`)
-      } else if (newArr.length === 5) {
-          result.push(`${newArr[2]} ${newArr[3]} ${newArr[4]}`)
-      }
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let ingredient = recipe.ingredients[i];
+    let newArr = ingredient.split(' ');
+    if (newArr.length === 3) {
+      result.push(newArr[2]);
+    } else if (newArr.length === 4) {
+      result.push(`${newArr[2]} ${newArr[3]}`)
+    } else if (newArr.length === 5) {
+      result.push(`${newArr[2]} ${newArr[3]} ${newArr[4]}`)
+    }
   }
   return result;
 };
@@ -122,7 +122,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(item => {
+    let b = item.indexOf(" ");
+    result.push(item.slice(0, b));
+  });
   return result;
 };
 
@@ -140,7 +143,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = arr.length; i >= 0; i--) {
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1)
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,8 +165,25 @@ removeLastCharacters('Gregor', -2) returns 'Gregor'
 removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
+// const removeLastCharacters = (str, numberOfCharacters) => {
+//   
+//   } else if (numberOfCharacters < 0) {
+//     return str;
+//   } else {
+//     return str.slice(-1, numberOfCharacters);
+//   }
+// };
+
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters < 0) {
+    return str;
+  } else if (numberOfCharacters >= str.length) {
+    for (let i = 0; i <= str.length; i++) {
+      return str.charAt(str.indexOf("x"));
+    }
+  } else {
+    return str.slice(0, 4);
+  }
 };
 
 
