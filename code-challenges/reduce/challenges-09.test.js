@@ -263,8 +263,14 @@ const extractChildren = (arr) => {
     accumulator.push(value.children);
     return accumulator;
     }
-  }, [])
-  return [].concat.apply([], allKids);
+  }, []);
+  let flatKids = allKids.reduce((accumulator, value) => {
+    return accumulator.concat(value);
+  });
+  return flatKids;
+
+  // Another solution I found on stack overflow
+  // return [].concat.apply([], allKids);
 };
 
 /* ------------------------------------------------------------------------------------------------
