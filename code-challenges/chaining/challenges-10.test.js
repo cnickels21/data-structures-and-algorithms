@@ -15,11 +15,11 @@ const count = (target, input) => {
   let count = input.reduce((accumulator, value, idx) => {
     return accumulator.concat(value);
   }, [])
-  .filter( item => {
-    if (item === target) {
-      return item;
-    }
-  })
+    .filter(item => {
+      if (item === target) {
+        return item;
+      }
+    })
   return count.length;
 };
 
@@ -37,9 +37,9 @@ const totalSum = (input) => {
   return input.reduce((accumulator, value, idx) => {
     return accumulator.concat(value);
   }, [])
-  .reduce( (a, b) => {
-    return a + b;
-  }, 0)
+    .reduce((a, b) => {
+      return a + b;
+    }, 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ const divisibleByFiveTwoToThePower = (input) => {
 
 };
 
-/* xxxxxx------------------------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
@@ -121,8 +121,8 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+  return data.filter(item => (item.gender === 'male' || item.gender === 'female')).map(item => item.name).join(' and ');
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
