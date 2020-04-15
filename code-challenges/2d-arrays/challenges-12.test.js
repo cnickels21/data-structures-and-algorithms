@@ -40,7 +40,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   let hourlyCookies = [];
   hours.forEach((hour, index) => {
-    hourlyCookies.push({sales: `${data[index]} cookies`, time: hour});
+    hourlyCookies.push({ sales: `${data[index]} cookies`, time: hour });
   })
   return hourlyCookies;
 };
@@ -114,8 +114,8 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   let product = 1;
-  numbers.forEach( item => 
-    item.forEach( number => 
+  numbers.forEach(item =>
+    item.forEach(number =>
       product *= number))
   return product;
 };
@@ -137,7 +137,14 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let counter = 0;
+  let total = 0;
+  weather.forEach(row =>
+    row.forEach(item => {
+      total += item;
+      counter++;
+    }))
+  return total / counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,7 +181,7 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
