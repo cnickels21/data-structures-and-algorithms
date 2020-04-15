@@ -38,7 +38,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  
+  let hourlyCookies = [];
+  hours.forEach((hour, index) => {
+    hourlyCookies.push({sales: `${data[index]} cookies`, time: hour});
+  })
+  return hourlyCookies;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +67,15 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let totalTreats = 0;
+  arr.forEach(item => {
+    item.items.forEach(list => {
+      if (list.name === 'Treats') {
+        totalTreats += list.quantity;
+      }
+    })
+  })
+  return totalTreats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +97,11 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if (board[row][col] === '#') {
+    return 'hit';
+  } else {
+    return 'miss';
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,7 +113,11 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  numbers.forEach( item => 
+    item.forEach( number => 
+      product *= number))
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
