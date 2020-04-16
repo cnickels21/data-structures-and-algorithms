@@ -55,7 +55,7 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   let arrayOfChars = [];
-  for (let i = 0; i< str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (i % 2 !== 0) {
       arrayOfChars.push(str[i]);
     }
@@ -119,7 +119,9 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map(courses => 
+    courses.filter(names =>
+      !names.includes('Brook')))
 };
 
 /* ------------------------------------------------------------------------------------------------
