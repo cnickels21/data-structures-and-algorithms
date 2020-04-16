@@ -160,7 +160,9 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  return arr.map((strings, index) => {
+    return strings[index];
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
