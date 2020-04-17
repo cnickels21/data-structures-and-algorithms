@@ -85,7 +85,22 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+
+  let twoBiggest = arr.reduce((characters, current) => {
+    if (current) {
+      characters.push({ name: current.name,
+      mass: parseInt(current.mass) })
+    }
+    return characters;
+  }, [])
+    .filter(biggest => {
+      if (biggest.mass > arr[0].mass) {
+        return biggest;
+      }
+    })
+
+    return twoBiggest.map(person => 
+      person.name).join(' - ')
 };
 
 /* ------------------------------------------------------------------------------------------------
